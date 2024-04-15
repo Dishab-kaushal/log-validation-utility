@@ -16,14 +16,13 @@ jobs:
       - name: SSH setup and creating folders
         run: |
           echo "${{ secrets.key }}" > ./key.pem
-          chmod 400 ./key.pem
+          chmod 600 ./key.pem
           mkdir -p ~/.ssh
           ssh-keyscan ${{ vars.host }} >> ~/.ssh/known_hosts
           ssh -i ./key.pem ${{ vars.user }}@${{ vars.host }} -T <<EOF
           if [ -d "retail-log-utility" ]; then
             echo "retail-log-utility folder exist"
             cd ./retail-log-utility && sudo docker-compose down && sudo rm -rf ./../retail-log-utility
-            sudo mkdir retail-log-utility 
           else
             echo "Creating retail-log-utility"
             sudo mkdir retail-log-utility 
