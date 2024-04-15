@@ -31,7 +31,7 @@ jobs:
           EOF
       - name: scp to copy files on ec2-server
         run: |
-            scp -i ./key.pem -r * ${{ vars.user }}@${{ vars.host }}:/home/"${{ vars.user }}"/retail-log-utility
+           sudo scp -i ./key.pem -r * ${{ vars.user }}@${{ vars.host }}:/home/"${{ vars.user }}"/retail-log-utility
             
       - name: ondc deployment
         run: |
