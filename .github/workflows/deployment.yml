@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
 jobs:
   ssh-ec2:
-    runs-on: Amazon Linux 2023
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
