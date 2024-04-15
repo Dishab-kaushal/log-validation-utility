@@ -23,10 +23,10 @@ jobs:
           if [ -d "retail-log-utility" ]; then
             echo "retail-log-utility folder exist"
             cd ./retail-log-utility && sudo docker-compose down && sudo rm -rf ./../retail-log-utility
-            mkdir retail-log-utility 
+            sudo mkdir retail-log-utility 
           else
             echo "Creating retail-log-utility"
-            mkdir retail-log-utility 
+            sudo mkdir retail-log-utility 
           fi
           EOF
       - name: scp to copy files on ec2-server
