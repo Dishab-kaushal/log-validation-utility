@@ -39,5 +39,5 @@ jobs:
           ssh-keyscan ${{ vars.host }} >> ~/.ssh/known_hosts
           cd ./retail-log-utility
           cp ~/.env ~/retail-log-utility/ 
-          sudo docker-compose up -d --buil
+          sudo docker-compose up -d --build
           EOF
